@@ -21,6 +21,11 @@
 
     <!-- Libraries CSS Files -->
     <link href="assets/lib/icomoon/icomoon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/lib/owl/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/lib/owl/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
 
     <!-- Main Stylesheet File -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -34,8 +39,7 @@
 </head>
 
 <body data-spy="scroll" data-offset="58" data-target="#navbar-main">
-
-
+<?php require 'data.php' ?>
     <div id="navbar-main">
         <!-- Fixed navbar -->
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -66,15 +70,65 @@
     <!-- ==== HEADERWRAP ==== -->
     <div id="home"></div>
     <div id="headerwrap" name="home">
-        <header class="clearfix">
-            <h1>DM ENGINEERING</h1>
-            <p>Manufacturer and Trader</p>
-            <p>Ahmedabad, Gujrat</p>
-        </header>
+        <div class="owl-carousel">
+            <div class="myslide owl-slide1">
+                <div class="hero-wrap">
+                    <div class="hero-inner">
+                        <span class="top-left-border tlb-1"></span>
+                        <p>Qualitative range of products</p>
+                        <p>Positive record</p>
+                        <span class="bottom-right-border brb-1"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="myslide owl-slide2">
+                <div class="hero-wrap">
+                    <div class="hero-inner">
+                        <span class="top-left-border tlb-2"></span>
+                        <p>Excellent logistic facility</p>
+                        <p>Timely delivery</p>
+                        <span class="bottom-right-border brb-2"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="myslide owl-slide3">
+                <div class="hero-wrap">
+                    <div class="hero-inner">
+                        <span class="top-left-border tlb-3"></span>
+                        <p>Client-centric approach</p>
+                        <p>Highly experienced professionals</p>
+                        <span class="bottom-right-border brb-3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /headerwrap -->
 
+    <!-- ==== ABOUT ==== -->
+    <div class="container" id="about" name="about">
+        <div class="row white">
+            <br>
+            <h1 class="centered">A LITTLE ABOUT OUR COMPANY</h1>
+            <hr>
+            <div class="col-lg-12">
+                <p class="centered">Founded in the year 2012, we “D M Engineering” are a dependable and famous manufacturer and trader of a broad range of Carton Printing Machine, Cap Sealing Machine, Liquid Filling Machine, Powder Filling Machine, etc. We are a Sole Proprietorship company, which is located in Ahmedabad (Gujarat, India). We provide these products in diverse specifications to attain the complete satisfaction of the clients. Further, our strong logistic support makes sure that these products are delivered within the promised time-frame. Under the supervision of “Mr. Vimal Mevada” (Proprietor), we have gained huge clientele in our country.</p>
+            </div>
+            <!-- col-lg-6 -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+
     <!-- ==== GREYWRAP ==== -->
+
+    <?php 
+        foreach($products as $cat => $product){
+           include 'card.php';
+        }
+    ?>
+
+    
     <div id="greywrap">
         <div class="row">
             <div class="col-lg-4 callout">
@@ -104,39 +158,6 @@
         <!-- row -->
     </div>
     <!-- greywrap -->
-
-    <!-- ==== ABOUT ==== -->
-    <div class="container" id="about" name="about">
-        <div class="row white">
-            <br>
-            <h1 class="centered">A LITTLE ABOUT OUR AGENCY</h1>
-            <hr>
-
-            <div class="col-lg-6">
-                <p>We believe ideas come from everyone, everywhere. In fact, at TemplateMag, everyone within our agency
-                    walls is a designer in their own right. And there are a few principles we believe—and we believe
-                    everyone should believe—about our design craft.
-                    These truths drive us, motivate us, and ultimately help us redefine the power of design. We’re big
-                    believers in doing right by our neighbors. After all, we grew up in the Twin Cities and we believe
-                    this place has much to offer. So we do what
-                    we can to support the community we love.</p>
-            </div>
-            <!-- col-lg-6 -->
-
-            <div class="col-lg-6">
-                <p>Over the past four years, we’ve provided more than $1 million in combined cash and pro bono support
-                    to Way to Grow, an early childhood education and nonprofit organization. Other community giving
-                    involvement throughout our agency history includes
-                    pro bono work for more than 13 organizations, direct giving, a scholarship program through the
-                    Minneapolis College of Art & Design, board memberships, and ongoing participation in the Keystone
-                    Club, which gives five percent of our company’s
-                    earnings back to the community each year.</p>
-            </div>
-            <!-- col-lg-6 -->
-        </div>
-        <!-- row -->
-    </div>
-    <!-- container -->
 
     <!-- ==== SECTION DIVIDER1 -->
     <section class="section-divider textdivider divider1">
@@ -270,7 +291,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 centered">
-                    <img class="img-responsive" src="img/macbook.png" align="">
+                    <img class="img-responsive" src="img/macbook.png">
                 </div>
                 <div class="col-lg-4">
                     <h2>We Are Hiring!</h2>
@@ -657,7 +678,9 @@
     <script src="assets/lib/easing/easing.min.js"></script>
 
     <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
+    <script src="assets/lib/jquery/jquery.min.js"></script>
+    <script src="assets/lib/owl/owl.carousel.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 
