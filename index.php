@@ -39,38 +39,11 @@
 </head>
 
 <body data-spy="scroll" data-offset="58" data-target="#navbar-main">
-<?php require 'data.php' ?>
-    <div id="navbar-main">
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
-                    </button>
-                    <a class="navbar-brand hidden-xs smoothscroll" href="#home">
-                        <img src="assets/images/logo.png" class="logo-head" />
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#home" class="smoothscroll">Home</a></li>
-                        <li> <a href="#services" class="smoothscroll"> Products</a></li>
-                        <li> <a href="#about" class="smoothscroll"> About</a></li>
-                        <li> <a href="#team" class="smoothscroll"> Team</a></li>
-                        <li> <a href="#portfolio" class="smoothscroll"> Portfolio</a></li>
-                        <li> <a href="#blog" class="smoothscroll"> Blog</a></li>
-                        <li> <a href="#contact" class="smoothscroll"> Contact</a></li>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </div>
-    </div>
-
+    <?php require 'header.php' ?>
     <!-- ==== HEADERWRAP ==== -->
     <div id="home"></div>
-    <div id="headerwrap" name="home">
-        <div class="owl-carousel">
+    <div id="headerwrap">
+        <div class="hero-carousel owl-carousel">
             <div class="myslide owl-slide1">
                 <div class="hero-wrap">
                     <div class="hero-inner">
@@ -107,12 +80,18 @@
 
     <!-- ==== ABOUT ==== -->
     <div class="container" id="about" name="about">
-        <div class="row white">
+        <div class="white about-wrap">
             <br>
             <h1 class="centered">A LITTLE ABOUT OUR COMPANY</h1>
             <hr>
-            <div class="col-lg-12">
-                <p class="centered">Founded in the year 2012, we “D M Engineering” are a dependable and famous manufacturer and trader of a broad range of Carton Printing Machine, Cap Sealing Machine, Liquid Filling Machine, Powder Filling Machine, etc. We are a Sole Proprietorship company, which is located in Ahmedabad (Gujarat, India). We provide these products in diverse specifications to attain the complete satisfaction of the clients. Further, our strong logistic support makes sure that these products are delivered within the promised time-frame. Under the supervision of “Mr. Vimal Mevada” (Proprietor), we have gained huge clientele in our country.</p>
+            <div>
+                <p class="centered">Founded in the year 2012, we “D M Engineering” are a dependable and famous
+                    manufacturer and trader of a broad range of Carton Printing Machine, Cap Sealing Machine, Liquid
+                    Filling Machine, Powder Filling Machine, etc. We are a Sole Proprietorship company, which is
+                    located in Ahmedabad (Gujarat, India). We provide these products in diverse specifications to
+                    attain the complete satisfaction of the clients. Further, our strong logistic support makes sure
+                    that these products are delivered within the promised time-frame. Under the supervision of “Mr.
+                    Vimal Mevada” (Proprietor), we have gained huge clientele in our country.</p>
             </div>
             <!-- col-lg-6 -->
         </div>
@@ -121,107 +100,35 @@
     <!-- container -->
 
     <!-- ==== GREYWRAP ==== -->
-
-    <?php 
-        foreach($products as $cat => $product){
-           include 'card.php';
-        }
-    ?>
-
-    
+    <div class="container" id="services">
     <div id="greywrap">
-        <div class="row">
-            <div class="col-lg-4 callout">
-                <span class="icon icon-stack"></span>
-                <h2>Bootstrap 3</h2>
-                <p>Shield Theme is powered by Bootstrap 3. The incredible Mobile First Framework is the best option to
-                    run your website. </p>
+            <h2 class="headings"><span>TOP SELLING MACHINES</span></h2>
+            <div class="top-carousel owl-carousel">
+                <?php  
+                    $cardProduct = array($products["Cap Sealing Machine"]["product-1"], $products["Sticker Labeling Machine"]["product-2"], $products["Sticker Labeling Machine"]["product-3"], $products["Liquid Filling Machine"]["product-3"], $products["Washing Machine"]["product-1"],$products["Carton Coding Machine"]["product-1"], $products["Capping Machine"]["product-1"], $products["Powder Filling Machine"]["product-3"], $products["Label Coding Machine"]["product-1"]);
+                    foreach($cardProduct as $product){
+                       include 'card.php';
+                    }
+                ?>
             </div>
-            <!-- col-lg-4 -->
-
-            <div class="col-lg-4 callout">
-                <span class="icon icon-eye"></span>
-                <h2>Retina Ready</h2>
-                <p>You can use this theme with your iPhone, iPad or MacBook Pro. This theme is retina ready and that is
-                    awesome. </p>
-            </div>
-            <!-- col-lg-4 -->
-
-            <div class="col-lg-4 callout">
-                <span class="icon icon-heart"></span>
-                <h2>Crafted with Love</h2>
-                <p>We don't make sites, we craft themes with love & passion. That is our most valued secret. We only do
-                    thing that we love. </p>
-            </div>
-            <!-- col-lg-4 -->
-        </div>
         <!-- row -->
+    </div>
+
+    <div id="greywrap">
+            <h2 class="headings"><span>MACHINES UNDER 3 LAKHS</span></h2>
+            <div class="top-carousel owl-carousel">
+                <?php  
+                    $cardProduct = array($products["Cap Sealing Machine"]["product-1"], $products["Sticker Labeling Machine"]["product-2"], $products["Sticker Labeling Machine"]["product-3"], $products["Liquid Filling Machine"]["product-3"], $products["Washing Machine"]["product-1"],$products["Carton Coding Machine"]["product-1"], $products["Capping Machine"]["product-1"], $products["Powder Filling Machine"]["product-3"], $products["Label Coding Machine"]["product-1"]);
+                    foreach($cardProduct as $product){
+                       include 'card.php';
+                    }
+                ?>
+            </div>
+        <!-- row -->
+    </div>
+
     </div>
     <!-- greywrap -->
-
-    <!-- ==== SECTION DIVIDER1 -->
-    <section class="section-divider textdivider divider1">
-        <div class="container">
-            <h1>DESIGN EXPAND BOUNDARIES</h1>
-            <hr>
-            <p>To achieve real change, we have to expand boundaries. Because the Wild West of what-could-be is
-                unexplored but rife with opportunity.</p>
-        </div>
-        <!-- container -->
-    </section>
-    <!-- section -->
-
-
-    <!-- ==== SERVICES ==== -->
-    <div class="container" id="services" name="services">
-        <br>
-        <br>
-        <div class="row">
-            <h2 class="centered">ONE BRAND, ONE VOICE.</h2>
-            <hr>
-            <br>
-            <div class="col-lg-offset-2 col-lg-8">
-                <p>Employees and consumers. Two halves of a brand’s entirety, the whole of a brand’s audience.
-                    Sometimes these two halves have very different viewpoints, creating a weak spot in the brand story.
-                    Weakness tarnishes credibility. Brands that aren’t
-                    credible aren’t viable.
-                </p>
-                <p>We squash weakness by designing the whole brand story. It’s crafted around the truism held by
-                    employees and consumers to create an experience that connects from the inside out.</p>
-                <p>By being true to the brand we represent, we elevate the audiences’ relationship to it. Like becomes
-                    love becomes a passion. Passion becomes advocacy. And we see the brand blossom from within,
-                    creating a whole story the audience embraces. That’s
-                    when the brand can truly flex its muscles.</p>
-            </div>
-            <!-- col-lg -->
-        </div>
-        <!-- row -->
-
-        <div class="row">
-            <h2 class="centered">MOBILE FIRST THINKING, ALWAYS.</h2>
-            <hr>
-            <br>
-            <div class="col-lg-offset-2 col-lg-8">
-                <img class="img-responsive" src="img/iphone.png" alt="">
-            </div>
-            <!-- col -->
-        </div>
-        <!-- row -->
-    </div>
-    <!-- container -->
-
-
-    <!-- ==== SECTION DIVIDER2 -->
-    <section class="section-divider textdivider divider2">
-        <div class="container">
-            <h1>DESIGN IS AN INTERACTION</h1>
-            <hr>
-            <p>To develop a deeper and more meaningful connection with consumers, we believe design must invite them to
-                take part in the conversation.</p>
-        </div>
-        <!-- container -->
-    </section>
-    <!-- section -->
 
     <!-- ==== TEAM MEMBERS ==== -->
     <div class="container" id="team" name="team">
@@ -284,281 +191,6 @@
         </div>
         <!-- row -->
     </div>
-    <!-- container -->
-
-    <!-- ==== GREYWRAP ==== -->
-    <div id="greywrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 centered">
-                    <img class="img-responsive" src="img/macbook.png">
-                </div>
-                <div class="col-lg-4">
-                    <h2>We Are Hiring!</h2>
-                    <p>Do you want to be one of use? Sure you want, because we are an awesome team!. Here we work hard
-                        every day to craft pixel perfect sites.</p>
-                    <p><a class="btn btn-success">Contact Us</a></p>
-                </div>
-            </div>
-            <!-- row -->
-        </div>
-        <br>
-        <br>
-    </div>
-    <!-- greywrap -->
-
-    <!-- ==== SECTION DIVIDER3 -->
-    <section class="section-divider textdivider divider3">
-        <div class="container">
-            <h1>DESIGN SOLVE PROBLEMS</h1>
-            <hr>
-            <p>From the purely practical to the richly philosophical, design is the solution to a host of challenges.</p>
-        </div>
-        <!-- container -->
-    </section>
-    <!-- section -->
-
-    <!-- ==== PORTFOLIO ==== -->
-    <div class="container" id="portfolio" name="portfolio">
-        <br>
-        <div class="row">
-            <br>
-            <h1 class="centered">WE CREATE COOL STUFF</h1>
-            <hr>
-            <br>
-            <br>
-        </div>
-        <!-- /row -->
-        <div class="container">
-            <div class="row">
-
-                <!-- PORTFOLIO IMAGE 1 -->
-                <div class="col-md-4 ">
-                    <div class="grid mask">
-                        <figure>
-                            <img class="img-responsive" src="img/portfolio/folio01.jpg" alt="">
-                            <figcaption>
-                                <h5>DASHBOARD</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                            </figcaption>
-                            <!-- /figcaption -->
-                        </figure>
-                        <!-- /figure -->
-                    </div>
-                    <!-- /grid-mask -->
-                </div>
-                <!-- /col -->
-
-
-                <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-						      a modal for each of your projects. -->
-
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Project Title</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p><img class="img-responsive" src="img/portfolio/folio01.jpg" alt=""></p>
-                                <p>This project was crafted for Some Name corp. Detail here a little about your job
-                                    requirements and the tools used. Tell about the challenges faced and what you and
-                                    your team did to solve it.</p>
-                                <p><b><a href="#">Visit Site</a></b></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                        <!-- /.modal-content -->
-                    </div>
-                    <!-- /.modal-dialog -->
-                </div>
-                <!-- /.modal -->
-
-
-                <!-- PORTFOLIO IMAGE 2 -->
-                <div class="col-md-4">
-                    <div class="grid mask">
-                        <figure>
-                            <img class="img-responsive" src="img/portfolio/folio02.jpg" alt="">
-                            <figcaption>
-                                <h5>UI DESIGN</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                            </figcaption>
-                            <!-- /figcaption -->
-                        </figure>
-                        <!-- /figure -->
-                    </div>
-                    <!-- /grid-mask -->
-                </div>
-                <!-- /col -->
-
-                <!-- PORTFOLIO IMAGE 3 -->
-                <div class="col-md-4">
-                    <div class="grid mask">
-                        <figure>
-                            <img class="img-responsive" src="img/portfolio/folio03.jpg" alt="">
-                            <figcaption>
-                                <h5>ANDROID PAGE</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                            </figcaption>
-                            <!-- /figcaption -->
-                        </figure>
-                        <!-- /figure -->
-                    </div>
-                    <!-- /grid-mask -->
-                </div>
-                <!-- /col -->
-            </div>
-            <!-- /row -->
-
-            <!-- PORTFOLIO IMAGE 4 -->
-            <div class="row">
-                <div class="col-md-4 ">
-                    <div class="grid mask">
-                        <figure>
-                            <img class="img-responsive" src="img/portfolio/folio04.jpg" alt="">
-                            <figcaption>
-                                <h5>PROFILE</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                            </figcaption>
-                            <!-- /figcaption -->
-                        </figure>
-                        <!-- /figure -->
-                    </div>
-                    <!-- /grid-mask -->
-                </div>
-                <!-- /col -->
-
-                <!-- PORTFOLIO IMAGE 5 -->
-                <div class="col-md-4">
-                    <div class="grid mask">
-                        <figure>
-                            <img class="img-responsive" src="img/portfolio/folio05.jpg" alt="">
-                            <figcaption>
-                                <h5>TWITTER STATUS</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                            </figcaption>
-                            <!-- /figcaption -->
-                        </figure>
-                        <!-- /figure -->
-                    </div>
-                    <!-- /grid-mask -->
-                </div>
-                <!-- /col -->
-
-                <!-- PORTFOLIO IMAGE 6 -->
-                <div class="col-md-4">
-                    <div class="grid mask">
-                        <figure>
-                            <img class="img-responsive" src="img/portfolio/folio06.jpg" alt="">
-                            <figcaption>
-                                <h5>PHONE MOCKUP</h5>
-                                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                            </figcaption>
-                            <!-- /figcaption -->
-                        </figure>
-                        <!-- /figure -->
-                    </div>
-                    <!-- /grid-mask -->
-                </div>
-                <!-- /col -->
-            </div>
-            <!-- /row -->
-            <br>
-            <br>
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-
-    <!-- ==== SECTION DIVIDER4 ==== -->
-    <section class="section-divider textdivider divider4">
-        <div class="container">
-            <h1>DESIGN CREATES EMOTIONAL CONNECTION</h1>
-            <hr>
-            <p>There’s more to design than meets the eye. It’s when it meets the heart that design creates a
-                meaningful, lasting connection with the audience.</p>
-        </div>
-        <!-- container -->
-    </section>
-    <!-- section -->
-
-    <!-- ==== BLOG ==== -->
-    <div class="container" id="blog" name="blog">
-        <br>
-        <div class="row">
-            <br>
-            <h1 class="centered">WE ARE STORYTELLERS</h1>
-            <hr>
-            <br>
-            <br>
-        </div>
-        <!-- /row -->
-
-        <div class="row">
-            <div class="col-lg-6 blog-bg">
-                <div class="col-lg-4 centered">
-                    <br>
-                    <p><img class="img img-circle" src="img/team/team04.jpg" width="60px" height="60px"></p>
-                    <h4>Jaye Smith</h4>
-                    <h5>Published Aug 30.</h5>
-                </div>
-                <div class="col-lg-8 blog-content">
-                    <h2>We Define Success</h2>
-                    <p>Armed with insight, we embark on designing the right brand experience that engages the audience.
-                        It encompasses both the strategic direction and creative execution that solves a business
-                        problem and brings the brand to life.</p>
-                    <p>In the create phase, the big idea is unleashed to the world through different media touchpoints.
-                        This is when we watch the audience fall in love all over again with our client’s brand.</p>
-                    <p><a href="#" class="icon icon-link"> Read More</a></p>
-                    <br>
-                </div>
-            </div>
-            <!-- /col -->
-
-            <div class="col-lg-6 blog-bg">
-                <div class="col-lg-4 centered">
-                    <br>
-                    <p><img class="img img-circle" src="img/team/team03.jpg" width="60px" height="60px"></p>
-                    <h4>Michele Lampa</h4>
-                    <h5>Published Aug 28.</h5>
-                </div>
-                <div class="col-lg-8 blog-content">
-                    <h2>A Beautiful Story</h2>
-                    <p>Armed with insight, we embark on designing the right brand experience that engages the audience.
-                        It encompasses both the strategic direction and creative execution that solves a business
-                        problem and brings the brand to life.</p>
-                    <p>In the create phase, the big idea is unleashed to the world through different media touchpoints.
-                        This is when we watch the audience fall in love all over again with our client’s brand.</p>
-                    <p><a href="#" class="icon icon-link"> Read More</a></p>
-                    <br>
-                </div>
-            </div>
-            <!-- /col -->
-        </div>
-        <!-- /row -->
-        <br>
-        <br>
-    </div>
-    <!-- /container -->
-
-
-    <!-- ==== SECTION DIVIDER6 ==== -->
-    <section class="section-divider textdivider divider6">
-        <div class="container">
-            <h1>CRAFTED IN NEW YORK, USA.</h1>
-            <hr>
-            <p>Some Address 987,</p>
-            <p>+34 9884 4893</p>
-            <p><a class="icon icon-twitter" href="#"></a> | <a class="icon icon-facebook" href="#"></a></p>
-        </div>
-        <!-- container -->
-    </section>
-    <!-- section -->
 
     <div class="container" id="contact" name="contact">
         <div class="row">
@@ -573,26 +205,6 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
                     and scrambled it to make a type specimen book.</p>
-                <h3>Newsletter</h3>
-                <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="inputEmail1" class="col-lg-4 control-label"></label>
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="text1" class="col-lg-4 control-label"></label>
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" id="text1" placeholder="Your Name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-10">
-                            <button type="submit" class="btn btn-success">Sign in</button>
-                        </div>
-                    </div>
-                </form>
             </div>
             <!-- col -->
 
@@ -652,33 +264,13 @@
 
     </div>
     <!-- container -->
-
-
-    <div id="copyrights">
-        <div class="container">
-            <p>
-                &copy; Copyrights <strong>Shield</strong>. All Rights Reserved
-            </p>
-            <div class="credits">
-                <!--
-        You are NOT allowed to delete the credit link to TemplateMag with free version.
-        You can delete the credit link only if you bought the pro version.
-        Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/shield-bootstrap-agency-template/
-        Licensing information: https://templatemag.com/license/
-      -->
-                Created with Shield template by <a href="https://templatemag.com/">TemplateMag</a>
-            </div>
-        </div>
-    </div>
-    <!-- / copyrights -->
-
+    <?php require 'footer.php' ?>
     <!-- JavaScript Libraries -->
     <script src="assets/lib/jquery/jquery.min.js"></script>
     <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/lib/easing/easing.min.js"></script>
 
     <!-- Template Main Javascript File -->
-    <script src="assets/lib/jquery/jquery.min.js"></script>
     <script src="assets/lib/owl/owl.carousel.min.js"></script>
     <script src="assets/js/main.js"></script>
 

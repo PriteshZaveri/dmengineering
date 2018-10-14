@@ -24,10 +24,7 @@ jQuery(document).ready(function($) {
     $(".navbar-collapse.collapse").removeClass("in");
   });
 
-  $(document).ready(function() {
-    $(".owl-carousel").owlCarousel();
-  });
-  $(".owl-carousel").owlCarousel({
+  $(".hero-carousel").owlCarousel({
     loop: true,
     margin: 0,
     nav: true,
@@ -39,6 +36,24 @@ jQuery(document).ready(function($) {
     responsive: {
       0: {
         items: 1
+      }
+    }
+  });
+
+  $(".top-carousel").owlCarousel({
+    margin: 0,
+    nav: true,
+    margin: 20,
+    navText: [
+      "<i class='fa fa-chevron-left'></i>",
+      "<i class='fa fa-chevron-right'></i>"
+    ],
+    responsive: {
+      0: {
+        items: 1
+      },
+      767: {
+        items: 4
       }
     }
   });
