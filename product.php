@@ -42,6 +42,56 @@
     <?php require 'header.php' ?>
     <!-- ==== HEADERWRAP ==== -->
     
+    <div class="product-wrap container">
+    <?php 
+        $type = $_REQUEST["type"];
+        switch ($type) {
+            case "Cap-Sealing-Machine":
+                    $listProducts = $products["Cap Sealing Machine"]; 
+                    $listKey = "Cap Sealing Machine";
+                    include 'single.php';
+                break;
+            case "Sticker-Labeling-Machine":
+                    $listProducts = $products["Sticker Labeling Machine"]; 
+                    $listKey = "Sticker Labeling Machine";
+                    include 'single.php';
+                break;
+            case "Liquid-Filling-Machine":
+                    $listProducts = $products["Liquid Filling Machine"]; 
+                    $listKey = "Liquid Filling Machine";
+                    include 'single.php';
+                break;
+            case "Washing-Machine":
+                    $listProducts = $products["Washing Machine"]; 
+                    $listKey = "Washing Machine";
+                    include 'single.php';
+                break;
+            case "Carton-Coding-Machine":
+                    $listProducts = $products["Carton Coding Machine"];
+                    $listKey = "Carton Coding Machine";
+                    include 'single.php'; 
+                break;
+            case "Capping-Machine":
+                    $listProducts = $products["Capping Machine"];
+                    $listKey = "Capping Machine";
+                    include 'single.php'; 
+                break;
+            case "Powder-Filling-Machine":
+                    $listProducts = $products["Powder Filling Machine"]; 
+                    $listKey = "Powder Filling Machine";
+                    include 'single.php';
+                break;
+            case "Label-Coding-Machine":
+                    $listProducts = $products["Label Coding Machine"]; 
+                    $listKey = "Label Coding Machine";
+                    include 'single.php';
+                break;
+            default:
+                    $listProductsAll = $products;
+                    include "all.php";
+        }
+    ?>
+    </div>
     <!-- container -->
     <?php require 'footer.php' ?>
     <!-- JavaScript Libraries -->

@@ -20,7 +20,7 @@
                         <li> <a href="#contact" class="smoothscroll"> Contact</a></li>
                         <li class="nav-drop"> <a href="/products" class="smoothscroll"> Products</a>
                             <ul>
-                                <li><a href="product.php">All Products</a></li>
+                                <li><a href="product.php?type=all">All Products</a></li>
                                 <li><a href="product.php?type=Cap-Sealing-Machine">Cap Sealing Machine</a></li>
                                 <li><a href="product.php?type=Sticker-Labeling-Machine">Sticker Labeling Machine</a></li>
                                 <li><a href="product.php?type=Liquid-Filling-Machine">Liquid Filling Machine</a></li>
